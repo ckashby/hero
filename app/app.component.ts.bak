@@ -14,8 +14,6 @@ import { AppComponent } from './app.component';
 	],
 	bootstrap: [ AppComponent ]
 })
-export class AppModule { }
-
 export class Hero {
 	id: number;
 	name: string;
@@ -27,15 +25,19 @@ export class Hero {
     template: `<h1>{{title}}</h1>
     		   <h2>{{hero.name}}</h2>
                <div>
-                 <label>Id: </label>{{hero.id}}</div>
+                 <label>Id: </label>{{hero2.id}}</div>
 	               <div>
 	                 <label>Name: </label>
-	                 <input [(ngModel)]="hero.name"
-						  (ngModelChange)="hero.name=$event" placeholder="name">
+	                 <input value="{{hero2.name}}"
+						  (ngModelChange)="hero2.name=$event" placeholder="name"><br>
+					<label>Alter Ego: </label>
+	                 <input value="{{hero2.ego}}"
+						  (ngModelChange)="hero2.ego=$event" placeholder="alter ego">
 	                </div>`
 })
 export class AppComponent { 
-  title = 'New Heroes';
+  title = 'Tower of Heroes';
+  subtitle = 'Return of the Jedi';
   hero: Hero = {
     id: 1,
     name: 'Windstorm',
